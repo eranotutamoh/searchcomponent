@@ -20,13 +20,6 @@ export class TextSearchService extends ApiService {
     this._apiURL = url;
   }
 
-  public getCountries(): Observable<any[]> {
-    const request = `https://code.totaralms.com/countries-json.php?search=new`;
-    return this._http.get(request)
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
   private getData(term: string): Observable<string[]> {
     return this._http.get(`${this.apiURL}${term}`)
       .map(this.extractData)

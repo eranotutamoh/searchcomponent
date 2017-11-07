@@ -1,4 +1,1 @@
-<input type="text" placeholder="Enter search text" >
-<p>
-  search-as-you-type works!
-</p>
+<input #searchBox type="text" placeholder="Enter search text" (keyup)="search(searchBox.value)" >
