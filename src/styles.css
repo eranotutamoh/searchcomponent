@@ -1,3 +1,6 @@
+html {
+    overflow-y: scroll;
+}
 body {
     margin: 0;
     padding: 0;
@@ -11,8 +14,7 @@ header {
     text-align: center;
 }
 #container {
-    display: flex;           /* establish flex container */
-    flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-    align-items: center;
+    width: 280px;
+    margin: 0 auto;
+
 }

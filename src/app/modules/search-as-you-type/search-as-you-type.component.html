@@ -1,1 +1,4 @@
-<input #searchBox type="text" placeholder="Enter search text" (keyup)="search(searchBox.value)" >
+<div>
+<input #searchBox type="text" placeholder="Enter search text" aria-label="Search through list of countires." (keyup)="search(searchBox.value)" >
+<img *ngIf="loading" src="assets/loader.gif">
+</div>

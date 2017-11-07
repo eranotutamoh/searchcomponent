@@ -15,16 +15,21 @@ export class SearchAsYouTypeComponent implements OnInit {
 
   private _searchFromInput: Observable<string[]>;
   private _subscription: Subscription;
+  public loading = false;
 
   constructor(private _searchService: TextSearchService) { }
 
   ngOnInit() {
     this._searchService.apiURL = this.url;
     this._searchFromInput = this._searchService.search();
-    this._subscription = this._searchFromInput.subscribe(result => this.results.emit({data: result}));
+    this._subscription = this._searchFromInput.subscribe(result => {
+      this.results.emit({data: result});
+      this.loading = false;
+    });
   }
 
   search(term: string, keyPressed): void {
+    this.loading = true;
     this._searchService.next(term);
   }
 
