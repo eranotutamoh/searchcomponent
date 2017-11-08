@@ -3,12 +3,12 @@
 
   <h5 *ngIf="countries && countries.length >= 100">"{{term}}" returns too many results, please keep typing.</h5>
   <h5 *ngIf="countries && countries.length === 0">"{{term}}" does not return any results.</h5>
-  <div *ngIf="countries && countries.length < 100">
+  <ng-container *ngIf="countries && countries.length < 100">
     <ul *ngFor="let country of countries" aria-label="List of countries.">
      <li>
-       <span aria-label="Country.">{{country.country}}</span>
-       <span aria-label="Capital.">{{country.capital}}</span>
+       <span aria-label="Country">{{country.country}}</span>
+       <span aria-label="Capital">{{country.capital}}</span>
        <span aria-label="Score">{{country.score}}</span>
      </li>
     </ul>
-  </div>
+  </ng-container>
